@@ -4,9 +4,12 @@ import numpy as np
 from scipy import interpolate
 
 # folderpath = 'D:\Project_folder\csv_original'
-folderpath = 'D:/Project_folder/csv_original'
+# folderpath = 'D:/Project_folder/csv_original'
 # resamplepath = 'D:\Project_folder\csv_resampled'
-resamplepath = 'D:/Project_folder/csv_resampled'
+# resamplepath = 'D:/Project_folder/csv_resampled'
+
+folderpath = os.getcwd() + '/csv_original/'
+resamplepath = os.getcwd() + '/csv_resampled/'
 
 Search_data_from = '.csv'
 resampling_size = 1000
