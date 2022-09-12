@@ -11,6 +11,12 @@ from scipy import interpolate
 folderpath = os.getcwd() + '/csv_original/'
 resamplepath = os.getcwd() + '/csv_resampled/'
 
+if not os.path.exists(folderpath):
+    os.mkdir(folderpath)
+
+if not os.path.exists(resamplepath):
+    os.mkdir(resamplepath)
+
 Search_data_from = '.csv'
 resampling_size = 1000
 
@@ -34,6 +40,6 @@ else:
 
         filenamelist = filenamelist + [os.path.splitext(os.path.basename(filelist[d]))[0]]
 
-        np.savetxt(resamplepath + '/' + filenamelist[d] + '_resampled' + '.csv', resampling_data)
+        np.savetxt(resamplepath + filenamelist[d] + '_resampled' + '.csv', resampling_data)
 
 
