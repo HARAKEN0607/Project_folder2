@@ -25,8 +25,11 @@ def cal_line(I, k, T1, T2, t):
 # figurepath = '/home/pi/Project_folder/' + 'png/'
 # csvpath = '/home/pi/Project_folder/' + 'csv_original/'
 
-figurepath = 'D:/Project_folder/'+'png/'
-csvpath = 'D:/Project_folder/'+'csv_original/'
+# figurepath = 'D:/Project_folder/'+'png/'
+# csvpath = 'D:/Project_folder/'+'csv_original/'
+
+figurepath = os.getcwd() + '/png/'
+csvpath = os.getcwd() + '/csv_original/'
 
 if not os.path.exists(figurepath):
     os.mkdir(figurepath)
