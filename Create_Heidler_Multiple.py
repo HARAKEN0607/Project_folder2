@@ -19,14 +19,16 @@ def cal_line(t, k, I, T1, T2):
 
 
 # Create or check data folders
-figurepath = '/home/pi/Project_folder/' + 'png/'
+# figurepath = '/home/pi/Project_folder/' + 'png/'
 # figurepath = 'D:/Project_folder/'+'png/'
+figurepath = os.getcwd() + '/png/'
 
 if not os.path.exists(figurepath):
     os.mkdir(figurepath)
 
-csvpath = '/home/pi/Project_folder/' + 'csv_original/'
+# csvpath = '/home/pi/Project_folder/' + 'csv_original/'
 # csvpath = 'D:/Project_folder/'+'csv_original/'
+csvpath = os.getcwd() + '/csv_original/'
 
 if not os.path.exists(csvpath):
     os.mkdir(csvpath)
