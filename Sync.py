@@ -1,4 +1,5 @@
-import os
+import subprocess
 
-print(os.uname()[1])
+FolderName = 'png'
 
+subprocess.run('rclone sync' + FolderName + 'gdrive:' + FolderName)
