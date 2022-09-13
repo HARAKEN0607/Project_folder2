@@ -7,4 +7,4 @@ raspi_folder = os.getcwd()
 
 gdrive_name = 'png'
 
-subprocess.run('rclone sync' + raspi_folder + '/png' + 'gdrive:' + FolderName)
+subprocess.run('rclone sync' + raspi_folder + '/png' + 'gdrive:' + gdrive_name)
