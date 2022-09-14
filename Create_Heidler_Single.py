@@ -3,13 +3,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # set parameter
-I = 100
-k = 0.93
+I = 100000
+k = [0.93, 0.986, 0.993]
 T1 = [10, 1, 0.25]
 T2 = [350, 200, 100]
-datasize = 1000
+datasize = 100000
 name_title = ['10/350 μs', '1/200 μs', '0.25/100 μs']
-file_name = ['10-350', '1-200', '0.25-100']
+file_name = ['10-350', '1-200', '025-100']
 
 
 def cal_line(I, k, T1, T2, t):
@@ -34,15 +34,15 @@ csvpath = os.getcwd() + '/csv_original/'
 if not os.path.exists(figurepath):
     os.mkdir(figurepath)
 
-if not os.path.exists(csvpath):
-    os.mkdir(csvpath)
+# if not os.path.exists(csvpath):
+#     os.mkdir(csvpath)
 
 for n in range(0, 3, 1):
     # Create time axis
     t = np.linspace(0, T2[n], datasize)
 
     # Calculate heidler
-    value = cal_line(I, k, T1[n], T2[n], t)
+    value = cal_line(I, k[n], T1[n], T2[n], t)
 
     # Set figure
     fig = plt.figure(figsize=(7, 5), dpi=300)
@@ -57,12 +57,12 @@ for n in range(0, 3, 1):
     ax.set_xlim([0, T2[n]])
     ax.set_ylim([0, 120])
 
-    ax.plot(t, value)
+    ax.plot(t, value/1000)
     # plt.show()
-    name = file_name[n] + '_T2(' + str(T2[n]) + ')_N' + str(datasize)
+    name = file_name[n] + '_Tmax' + str(T2[n]) + '_N' + str(datasize)
 
     fig.savefig(figurepath + name + '.png', dpi=300)
 
     # Save data to csv
-    data = np.stack([t.T, value.T], 1)
+    data = np.stack([t.T / 1e6, value.T], 1)
     np.savetxt(csvpath + name + '.csv', data)
