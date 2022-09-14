@@ -11,8 +11,8 @@ from scipy import interpolate
 folderpath = os.getcwd() + '/csv_original/'
 resamplepath = os.getcwd() + '/csv_resampled/'
 
-if not os.path.exists(folderpath):
-    os.mkdir(folderpath)
+# if not os.path.exists(folderpath):
+#     os.mkdir(folderpath)
 
 if not os.path.exists(resamplepath):
     os.mkdir(resamplepath)
