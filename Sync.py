@@ -14,3 +14,5 @@ subprocess.run('rclone sync ' + raspi_folder + '/' + folder_name2 + ' gdrive:' +
 subprocess.run('rclone sync ' + raspi_folder + '/' + folder_name3 + ' gdrive:' + folder_name3, shell=True)
 
 print('finished')
+
+
