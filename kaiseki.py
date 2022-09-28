@@ -42,4 +42,5 @@ else:
 
         np.savetxt(resamplepath + filenamelist[d] + '_resampled' + '.csv', resampling_data)
 
-
+print(filelist)
+print(filenamelist)
